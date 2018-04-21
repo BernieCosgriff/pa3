@@ -94,7 +94,7 @@ class LoadBalancer(app_manager.RyuApp):
 
     def create_arp(self, src_mac, src_ip, dst_mac, dst_ip):
         eth = ethernet.ethernet(dst_mac, src_mac, ether_types.ETH_TYPE_ARP)
-        resp = arp.arp_ip(2, src_mac, src_ip , dst_mac, dst_ip) #arp response opcode = 2
+        resp = arp.arp_ip(2, src_mac, src_ip , dst_mac, dst_ip)
 
         print "Built ARP response->SrcMAC:", resp.src_mac, " SrcIP:", resp.src_ip, " DstMAC:", resp.dst_mac, " DstIP:", resp.dst_ip
 
